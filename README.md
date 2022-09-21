@@ -13,4 +13,5 @@ Phone: +420 605 063 354, +81 70-9020-3002
   Currently based in Japan                   
   ------------------------------------------ -------------------------------------------
 
+  CV available here:
   <https://github.com/mirsimko/resume/blob/master/CV.pdf>
