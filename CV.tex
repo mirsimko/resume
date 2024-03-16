@@ -1,21 +1,17 @@
 %%%%%%%%%%%%%%%%% PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Change the font size of your document - 10pt, 12.1pt, etc.
 \documentclass[a4paper,11pt,oneside]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{setspace}
 \usepackage[hidelinks]{hyperref}
-
 \usepackage{graphicx}
-\graphicspath{{images/}} %upload your signature to this file
-%Change the margins to fit your CV/resume content
+\graphicspath{{images/}}
 \usepackage[left=0.6in, right=1in, bottom=0.8in, top=1in]{geometry}
+\usepackage{enumitem}
+\setlist[itemize]{align=parleft,left=0pt..0.5em,label={-},nosep}
 
-%Skype information - include your Skype name for a link to add you on Skype
-\newcommand*{\Skype}{\href{skype:john.smith?add}{john.smith}} 
-\newcommand{\Absender}[1][\normalsize]{\Skype} 
-
-%Changes the page numbers - {arabic}=arabic numerals, {gobble}=no page numbers, {roman}=Roman numerals
 \pagenumbering{gobble}
+
+\hyphenation{MaskRCNN}
 
 %%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%%%%%%
 
@@ -25,109 +21,124 @@
 
 \noindent  \LARGE{\textbf{Miroslav Šimko, PhD}}  \\
 \vspace{-2ex}
-% \hline 
 \normalsize
 
 %%%%%%%%%%%%%%%%% CONTACT INFORMATION %%%%%%%%%%%%%%%%%
-% Your email address, website, and Skype name are links to send email, open your website and add you on Skype. 
 
 \begin{center}
 \begin{tabular}{l l}
- Computer vision / Python / C++ developer & \hspace{1in} \href{mailto:ms@iolabs.ch}{ms@iolabs.ch} \\
- Currently based in Kyoto, Japan & \hspace{1in} Phone: +81 70-9020-3002,  +420 605 063 354\\
-\end{tabular}
-\end{center}
+ Computer Vision / Python / C++ Developer & \hspace{1in} \href{mailto:ms@iolabs.ch}{ms@iolabs.ch} \\
+  Currently based in Kyoto, Japan & \hspace{1in} Phone: +81 70-9020-3002 \\
+  \end{tabular}
+  \end{center}
 
-\vspace{1em}
+  \vspace{1em}
 
 %%%%%%%%%%%%%%%%% MAIN BODY %%%%%%%%%%%%%%%%%%%%%%%%%%%
-% The main body is contained in a tabular environment. To move sections onto the next page, simply end the tabular environment and begin a new tabular environment.
 
-\noindent \begin{tabular}{@{} l l}
-\hline \\
+  \noindent \begin{tabular}{@{} l l}
+  \hline \\
+    \begin{tabular}[t]{l} \Large{Professional} \\ \Large{Summary} \end{tabular}
+    &
+    \begin{minipage}[t]{14.5cm}
+    Results-driven Data Analyst and Machine Learning Expert with a proven track
+    record of leveraging Python and PyTorch to extract insights from complex datasets.
+    Proficient in the application of machine learning algorithms to solve real-world problems,
+    with a focus on 3D computer vision and natural language processing. Experienced
+    in developing and deploying language model-based solutions, including Large Language
+    Models (LLMs), to enhance document understanding and classification tasks. Skilled
+    in data visualization, statistical analysis, and model evaluation techniques.
+    \end{minipage} \\
+    \\
+    \hline \\
  \Large{Education}   
      & \textbf{2013--2021, Ph.D.}, Experimental Nuclear and Particle Physics \\
      & {Czech Technical University in Prague (CTU)} \\
      & {Faculty of Nuclear Sciences and Physical Engineering (FNSPE)} \\
-     & \textbf{Thesis:} Study of Heavy Flavor at the STAR Experiment \\[.3cm]
+     & \textbf{Thesis focus:} Study of Heavy Flavor at the STAR Experiment \\[.3cm]
 %      & \\
-     & \textbf{2011--2013, M.Sc.}, Experimental Nuclear and Particle Physics \\
-     & CTU -- FNSPE \\
+     & \textbf{2011--2013, M.Sc.}, Experimental Nuclear and Particle Physics (CTU -- FNSPE)\\
      & \textbf{Thesis:} Design and Optimization of the Optical Readout System \\
      & for Electromagnetic Calorimeter FOCAL for the ALICE Experiment \\[.3cm]
 %      & \\
-     & \textbf{2008--2011, B.Sc.}, Experimental Nuclear and Particle Physics \\
-     & CTU -- FNSPE \\
+     & \textbf{2008--2011, B.Sc.}, Experimental Nuclear and Particle Physics (CTU -- FNSPE)\\
      & \textbf{Thesis:} Detector Control System for the ALICE Experiment \\
      \\
    
-  \Large{Experience} & \textbf{2021--present: ioLabs AG: Computer-vision developer,} training\\
-     & and development of 2D and 3D computer-vision models for engineering projects. \\
-     & Utilized and trained state-of-the-art models Mask RCNN and Mesh CNN\@. \\ 
-     & Used advanced pruning and quantization techniques. Written in Python, \\
-     & using the Pytorch framework, deployed as API on Flask.\\[.3cm]
-     & \textbf{2019--2020: ioLabs AG: Geometry engine for collision detection}, written\\
-     &  in C++ and Python, using Open CASCADE and VTK\\[.3cm]
-     & \textbf{2014--2021: Analysis}: Reconstruction of the $\Lambda_\mathrm{c}$ baryon  at the STAR \\
-     & experiment Brookhaven National Laboratory (BNL), USA; Collaboration between \\
-     &  Lawrence Berkeley National Laboratory (LBNL), USA, and CTU, Czech Republic;\\
-     & Analysis, using ``big-data'' techniques on computing clusters; Code written in C++ \\
-     & and Root, using machine learning from the TMVA package (Boosted-Decision Trees)\\[.3cm]
-     & \textbf{2015--2019: STAR Zero-Degree-Calorimeter on-call expert} at BNL, USA; \\ 
-     &  Responsible for control, calibration, maintenance, and upgrades of crucial detector \\
-     & components; Calibration code written in C++ and Root \\[.3cm]
-     & \textbf{2013--2014: LBNL, USA\@: Simulations for the Pixel sensors at the STAR } \\ 
-     & \textbf{experiment;} Written in C++ and Root\\[.3cm]
-     & \textbf{2012--2013: Development of the Prague prototype (scintillator version)} \\ 
-     & \textbf{of the electromagnetic-forward calorimeter FoCal} for ALICE, LHC, CERN, \\
-     & Switzerland; R\&D of optical readout; Built an automated optical testing bench; \\
-     & Used NIM LabView, analysis, using C++, Root, and Matlab\\[.3cm]
-     & \textbf{2011--2013: Detector-Control-System expert for the Silicon-Drift Detector} \\
-     & for the ALICE experiment, LHC, CERN, Switzerland; Responsible for maintenance \\
-     & and smooth operation of the detector, written upgrades to the system in PVSS. \\
-    
+  \Large{Experience} & \textbf{2021--present: ioLabs AG, Zurich, Switzerland}\\
+    & \textbf{Computer Vision Developer (mostly remotely)}\\
+    & \begin{minipage}[t]{14.5cm}
+      \begin{itemize}
+	\item Developed and trained 3D computer vision models for civil engineering projects.
+	\item Led a project on sorting and understanding technical documents using LLM, embedding, and computer vision.
+	\item Utilized advanced pruning and quantization techniques, deployed models as APIs
+	  on Flask and FastAPI.
+	\item Proficient in Python, PyTorch framework, and state-of-the-art models such as 
+	  MaskRCNN for 2D and MeshCNN for 3D computer vision.
+	\item Developed plugins for Achicad and Vectorworx in C++.
+     \end{itemize}
+  \vspace{1.7ex}
+  \textbf{2019--2020: ioLabs AG, Zurich, Switzerland}\\
+  \textbf{Geometry Engine Developer}
+      \begin{itemize}
+	\item Engineered collision detection algorithms systems using Python and C++.
+      \end{itemize}
+  \vspace{1.7ex}
+  \textbf{2013--2021: Brookhaven National Laboratory (BNL), USA}\\
+  \textbf{Experimental Physicist}
+      \begin{itemize}
+	\item Analyzed data for heavy-flavor particle reconstruction at the STAR experiment.
+	\item Utilized "big-data" techniques on computing clusters, employing C++ and Root.
+	\item Applied machine learning with the TMVA package (Boosted-Decision Trees).
+	\item Managed maintenance and upgrades for the STAR ZDC detector.
+      \end{itemize}
+  \vspace{1.7ex}
+  \textbf{2011--2013: CERN, Switzerland: Detector Control System Expert}
+      \begin{itemize}
+	\item Managed maintenance and upgrades for Silicon-Drift Detectors at the ALICE experiment.
+	\item Developed upgrades in PVSS and contributed to the Prague prototype for the FoCal detector. 
+      \end{itemize}
+    \end{minipage}\\
+  \end{tabular}
 
-\end{tabular}
-
-\newpage
+  \newpage
 
 %%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%%%%%%%%%
-% The reference section has links to your references' websites and email addresses.
-\noindent  \begin{tabular}{@{} l l}
-  \Large{Languages}   & Czech/Slovak (native), English (fluent), Japanese (intermediate), \\
-\Large{and Skills}    & French (beginner)  \\[.2cm]
-     & Statistical analysis, machine learning, programming for computing clusters, \\
-     & Docker, Jenkins, git\\[.2cm]
-     & Programming in C, C++, Python, Root, Pytorch, BASH,  \\
-     & PVSS, National Instruments LabView \\[.2cm]
-     & Driver's license B\\[.4cm]
-\Large{Teaching} & \textbf{CTU -- FNSPE\@:} Student Physics Laboratory Practice, 2014--2019\\[.1cm]
-     & Supervised 3 undergraduate students
-     \\[.2cm]
-\Large{Interests}    
-     & Physics, automation, photography, sport (bicycle, ski, canoeing), hiking, reading \\
-     \\[.1cm]
-\Large{Publications}   & Analysis published in the journal Physical Review Letters \\
-\Large{and Conferences} & Author on more than 95 collaboration papers \\[.2cm]
-     & Presented results at 9 international conferences with 3 proceedings papers\\
-     & \\[.5cm]
-\end{tabular}
+
+  \noindent  \begin{tabular}{@{} l l}
+    \begin{tabular}[t]{l}\Large{Languages and Skills} \end{tabular}   
+      & 
+    \begin{minipage}[t]{10cm}
+    Czech/Slovak (native), English (fluent), Japanese (intermediate), French (beginner)  \\[.2cm]
+    Python, C++, PyTorch, AWS, Docker, Jenkins, Git, Statistical analysis\\[.2cm]
+    Driver's License B
+    \end{minipage}\\[.4cm]
+    \begin{tabular}[t]{l}\Large{Interests}\end{tabular}    & Physics, Automation, Photography, Sports, Reading \\
+  & \\[.1cm]
+    \begin{tabular}[t]{l}\Large{Publications and Conferences}\end{tabular}
+      & 
+    \begin{minipage}[t]{10cm}
+      Published article in Physical Review Letters, author on more than 95 collaboration papers.\\
+      Presented at 9 international conferences with 3 proceedings papers.
+    \end{minipage} \\
+  & \\[.5cm]
+  \end{tabular}
 
 \noindent \begin{tabular}{@{} l l l}
   \Large{References} & & \\[.3cm]
-& \small Martin Loučka (current employer) & \small Zhangbu Xu (Work on STAR ZDC) \\
-& \small ioLabs AG & \small BNL, USA  \\
-& \small CEO & \small STAR Spokesperson \\
-&  \footnotesize{\href{mailto:ml@iolabs.ch}{ml@iolabs.ch}} &  \footnotesize{\href{mailto:xzb@bnl.gov}{xzb@bnl.gov}} \\[.2cm]
-& \small Jaroslav Bielčík (Former supervisor)& \small  Xin Dong (Supervisor at LBNL) \\
-& \small FNSPE -- CTU & \small LBNL, USA \\
-& \small Head of the Experimental Particle Physics Department & \small  Senior researcher \\
-&  \footnotesize{\href{mailto:jaroslav.bielcik@fjfi.cvut.cz}{jaroslav.bielcik@fjfi.cvut.cz}} &  \footnotesize{\href{mailto:xdong@lbl.gov}{xdong@lbl.gov}} \\[.2cm]
-& \small Jana Bielčíková (Former employer) & \small Vojtěch Petráček (Former supervisor)   \\
-& \small Nuclear Physics Institute, Czech Academy of Sciences & \small CTU \\
-& \small Director of the Nuclear Spectroscopy Department & \small University director  \\
-&  \footnotesize{\href{mailto:jana.bielcikova@ujf.cas.cz}{jana.bielcikova@ujf.cas.cz}}  &  \footnotesize{\href{mailto:vojtech.petracek@fjfi.cvut.cz}{vojtech.petracek@fjfi.cvut.cz}}  \\[.4cm]
-  \hline \\
+  & \small Martin Loučka (current employer) & \small Zhangbu Xu (Work on STAR ZDC) \\
+  & \small ioLabs AG & \small BNL, USA  \\
+  & \small CEO & \small STAR Spokesperson \\
+  &  \footnotesize{\href{mailto:ml@iolabs.ch}{ml@iolabs.ch}} &  \footnotesize{\href{mailto:xzb@bnl.gov}{xzb@bnl.gov}} \\[.2cm]
+  & \small Jaroslav Bielčík (Former supervisor)& \small  Xin Dong (Supervisor at LBNL) \\
+  & \small FNSPE -- CTU & \small LBNL, USA \\
+  & \small Head of the Experimental Particle Physics Department & \small  Senior researcher \\
+  &  \footnotesize{\href{mailto:jaroslav.bielcik@fjfi.cvut.cz}{jaroslav.bielcik@fjfi.cvut.cz}} &  \footnotesize{\href{mailto:xdong@lbl.gov}{xdong@lbl.gov}} \\[.2cm]
+  & \small Jana Bielčíková (Former employer) & \small Vojtěch Petráček (Former supervisor)   \\
+  & \small Nuclear Physics Institute, Czech Academy of Sciences & \small CTU \\
+  & \small Director of the Nuclear Spectroscopy Department & \small University director  \\
+  &  \footnotesize{\href{mailto:jana.bielcikova@ujf.cas.cz}{jana.bielcikova@ujf.cas.cz}}  &  \footnotesize{\href{mailto:vojtech.petracek@fjfi.cvut.cz}{vojtech.petracek@fjfi.cvut.cz}}  \\[.4cm]
+\hline \\
   & \textbf{Github page:} & \\
   & \small \url{https://github.com/mirsimko} & \\[.3cm]
   & \textbf{ioLabs AG} & \\
