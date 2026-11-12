@@ -1,17 +1,9 @@
 **Miroslav Šimko, PhD**
 
-<ms@iolabs.ch>
+Machine Learning / Python / C++ Developer at [ioLabs](https://iolabs.ch)
 
-Phone: +420 605 063 354, +81 70-9020-3002
+[mirsimko@gmail.com](mailto:mirsimko@gmail.com) · [GitHub](https://github.com/mirsimko)
 
-  ------------------------------------------ -------------------------------------------
-  Computer vision / Python / C++ developer   
-  at ioLabs AG                               
+[Download CV (PDF)](https://github.com/mirsimko/resume/blob/master/CV.pdf)
 
-  <http://iolabs.ch>                         
-
-  Currently based in Japan                   
-  ------------------------------------------ -------------------------------------------
-
-  CV available here:
-  <https://github.com/mirsimko/resume/blob/master/CV.pdf>
+Build with `latexmk -pdf CV.tex`.
