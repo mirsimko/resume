@@ -1,146 +1,156 @@
-%%%%%%%%%%%%%%%%% PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[a4paper,11pt,oneside]{article}
+\documentclass[a4paper,10pt,oneside]{article}
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{setspace}
-\usepackage[hidelinks]{hyperref}
-\usepackage{graphicx}
-\graphicspath{{images/}}
-\usepackage[left=0.6in, right=1in, bottom=0.8in, top=1in]{geometry}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\usepackage[semibold]{sourceserifpro}
+\usepackage[semibold]{sourcesanspro}
+\usepackage[tracking=true]{microtype}
+\usepackage{xcolor}
+\definecolor{ink}{HTML}{1B1F23}
+\definecolor{accent}{HTML}{17566B}
+\definecolor{meta}{HTML}{5B636B}
+\definecolor{hair}{HTML}{C5CBD1}
+\usepackage[left=5.7cm,right=2.1cm,top=2.2cm,bottom=2.3cm,footskip=1.1cm]{geometry}
 \usepackage{enumitem}
-\setlist[itemize]{align=parleft,left=0pt..0.5em,label={-},nosep}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage[colorlinks=true,urlcolor=accent,linkcolor=accent,
+  pdfauthor={Miroslav Šimko},pdftitle={Miroslav Šimko, Curriculum vitae}]{hyperref}
 
-\pagenumbering{gobble}
-
-\hyphenation{MaskRCNN}
-
-%%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%%%%%%
+\newlength\cvhang
+\setlength\cvhang{3.6cm}
+\newlength\cvfull
+\setlength\cvfull{\dimexpr\textwidth+\cvhang\relax}
+\renewcommand\normalsize{\fontsize{10.4}{14.6}\selectfont}
+\newcommand\cvmeta{\sffamily\fontsize{8.8}{14.6}\selectfont\color{meta}}
+\newcommand\cvsmall{\sffamily\fontsize{9}{12.6}\selectfont}
+\newcommand\cvkey[1]{\leavevmode\llap{\makebox[\cvhang][l]{\cvmeta #1}}\ignorespaces}
+\newcommand\cvsection[1]{\par\addvspace{20pt}\noindent\hspace*{-\cvhang}%
+  {\sffamily\bfseries\fontsize{9}{11}\selectfont\color{accent}#1}%
+  \enspace\textcolor{hair}{\leaders\hrule height 2.9pt depth -2.5pt\hfill}\par
+  \nopagebreak\vspace{9pt}}
+\newcommand\cventry[3]{\par\addvspace{10pt}\cvkey{#1}%
+  {\sffamily\bfseries\fontsize{10.6}{14.6}\selectfont #2}%
+  \if\relax\detokenize{#3}\relax\else
+    \hspace{.6em}{\sffamily\fontsize{10.2}{14.6}\selectfont\color{meta}#3}\fi
+  \par\nopagebreak\vspace{2pt}}
+\newcommand\cvproject[3]{\par\addvspace{8pt}%
+  \href{#2}{{\sffamily\bfseries\fontsize{10}{14.6}\selectfont\color{ink}#1}}%
+  \hfill\href{#2}{{\sffamily\fontsize{8.5}{14.6}\selectfont #3}}\par\nopagebreak}
+\newcommand\cvrow[2]{\par\addvspace{4pt}\cvkey{#1}#2\par}
+\newcommand\cvref[5]{\begin{minipage}[t]{.48\cvfull}\raggedright\cvsmall
+  {\bfseries\fontsize{9.6}{12.6}\selectfont #1} {\color{meta}#2}\\
+  #3\\#4\\\href{mailto:#5}{#5}\end{minipage}}
+\newcommand\cvrefrow[2]{\par\noindent#1\hfill#2\par\vspace{10pt}}
+\setlist[itemize]{label={\color{meta}\textbullet},leftmargin=1.1em,labelsep=.5em,nosep,topsep=3pt}
+\setlength\parindent{0pt}
+\setlength\parskip{0pt}
+\raggedbottom\frenchspacing\urlstyle{same}
+\AtBeginDocument{\raggedright\color{ink}}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand\headrulewidth{0pt}
+\fancyhfoffset[L]{\cvhang}
+\fancyfoot[L]{\cvmeta Miroslav Šimko}
+\fancyfoot[R]{\cvmeta\thepage\,/\,\pageref*{LastPage}}
 
 \begin{document}
+\noindent\hspace*{-\cvhang}\begin{minipage}[b]{.62\cvfull}
+  {\sffamily\bfseries\fontsize{25}{29}\selectfont Miroslav Šimko, Ph.D.}\\[5pt]
+  {\sffamily\fontsize{11.5}{15}\selectfont\color{accent}Machine Learning / Python / C++ Developer}
+\end{minipage}\hfill
+\begin{minipage}[b]{.35\cvfull}\raggedleft\sffamily\fontsize{9.4}{13.6}\selectfont
+  \href{mailto:mirsimko@gmail.com}{mirsimko@gmail.com}\\
+  \href{https://github.com/mirsimko}{github.com/mirsimko}\\
+  {\color{meta}Kyoto, Japan}
+\end{minipage}\par
+\vspace{10pt}\noindent\hspace*{-\cvhang}\textcolor{accent}{\rule{\cvfull}{.9pt}}\par
+\vspace{15pt}\noindent\hspace*{-\cvhang}\parbox[t]{\cvfull}{\fontsize{11.3}{16.4}\selectfont\raggedright
+  I build computer-vision software for motorway scans and technical documents at ioLabs.\\
+  My background is experimental particle physics at STAR.}\par
 
-%%%%%%%%%%%%%%%%% NAME OF APPLICANT %%%%%%%%%%%%%%%%%%%
+\cvsection{Experience}
+\cventry{2021--present}{ioLabs}{}
+{\sffamily\color{meta}Developer (Machine Learning, Python, C++)}\par
+\cvproject{Kirioll}{https://kirioll.com/}{kirioll.com}
+I develop road-marking and pavement segmentation with \mbox{U-Net} and PyTorch,
+using AI coding agents. This work is in progress. I train and deploy on Azure ML
+and manage training data with DVC. I am responsible for technical direction and
+point-cloud extraction in this team project, which turns motorway laser scans into CAD data.
 
-\noindent  \LARGE{\textbf{Miroslav Šimko, PhD}}  \\
-\vspace{-2ex}
-\normalsize
+\cvproject{Automated plan stamping}{https://iolabs.ch/en/case-studies/automated-plan-stamping/}{ioLabs case study}
+I built a system that places stamps in technical PDFs. It uses Mask R-CNN with a
+classical fallback and still runs behind FastAPI. I also quantized and retrained
+the model, but did not use that version.
 
-%%%%%%%%%%%%%%%%% CONTACT INFORMATION %%%%%%%%%%%%%%%%%
+\cvproject{AI document sorting}{https://iolabs.ch/en/case-studies/ai-data-sorting/}{ioLabs case study}
+I used GPT-3.5 and GPT-4 to classify technical documents and extract information.
 
-\begin{center}
-\begin{tabular}{l l}
- Machine Learning / Python / C++ Developer & \hspace{1in} \href{mailto:mirsimko@gmail.com}{mirsimko@gmail.com} \\
-  Currently based in Kyoto, Japan & \hspace{1in} \url{https://github.com/mirsimko} \\
-  \end{tabular}
-  \end{center}
+\cventry{2019/02--2019/12}{ioLabs s.r.o.}{}
+{\sffamily\color{meta}Programming and scripting (C++, Python, C\#)}\par
+\cvkey{agreement term}Limited-hours agreement alongside Ph.D. research.
 
-  \vspace{1em}
+\cvsection{Research experience}
+\cventry{2013--2021}{Ph.D. research in particle physics / data science}{}
+{\cvsmall\color{meta}
+Brookhaven National Laboratory, USA: STAR research, 2013--2021.\\
+Lawrence Berkeley National Laboratory, USA: affiliate appointments within 2013/11--2019/05.\\
+Nuclear Physics Institute, Czech Academy of Sciences: 2015--2021.\par}
+\begin{itemize}
+  \item I led a $\Lambda_c$ analysis at STAR with colleagues, using ROOT and C++.
+  \item I handled STAR ZDC operations, calibration and on-call duties.
+  \item I evaluated the PXL detector simulator and advised students.
+\end{itemize}
+\cventry{2011--2013}{CERN, Switzerland}{Detector-Control Systems Developer}
+I developed detector-control systems in PVSS and C/C++ and contributed to a detector prototype.
 
-%%%%%%%%%%%%%%%%% MAIN BODY %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\cvsection{Education}
+{\sffamily\bfseries Czech Technical University in Prague}\par
+Faculty of Nuclear Sciences and Physical Engineering.\\
+Experimental nuclear and particle physics.\par\vspace{7pt}
+\cvrow{2013/10--2021/03}{{\sffamily\bfseries Ph.D.}}
+\cvrow{Autumn 2011--2013/09}{{\sffamily\bfseries Ing./M.Sc.}}
+\cvrow{Autumn 2008--2011/09}{{\sffamily\bfseries B.Sc.}}
 
-  \noindent \begin{tabular}{@{} l l}
-  \hline \\
-    \begin{tabular}[t]{l} \Large{Professional} \\ \Large{Summary} \end{tabular}
-    &
-    \begin{minipage}[t]{13.2cm}
-    I build computer-vision software for motorway scans and technical documents
-    at ioLabs. My background is experimental particle physics at STAR.
-    \end{minipage} \\
-    \\
-    \hline \\
- \Large{Education}
-     & Czech Technical University in Prague \\
-     & Faculty of Nuclear Sciences and Physical Engineering \\
-     & Experimental nuclear and particle physics \\[.3cm]
-     & \textbf{2013/10--2021/03, Ph.D.} \\
-     & \textbf{Autumn 2011--2013/09, Ing./M.Sc.} \\
-     & \textbf{Autumn 2008--2011/09, B.Sc.} \\
-     \\
+\cvsection{Publications and conferences}
+\cvrow{Papers}{Author on more than 95 collaboration papers, including an article in
+\mbox{\emph{Physical Review Letters}}.}
+\cvrow{Presentations}{Nine conference and workshop presentations, including talks and posters.}
 
-  \Large{Experience} & \textbf{2021--present: ioLabs}\\
-    & \textbf{Developer (Machine Learning, Python, C++)}\\
-    & \begin{minipage}[t]{13.2cm}
-      \textbf{\href{https://kirioll.com/}{Kirioll.}}
-      I develop road-marking and pavement segmentation with \mbox{U-Net} and
-      PyTorch, using AI coding agents. This work is in progress. I train and
-      deploy on Azure ML and manage training data with DVC.\\[.2cm]
-      I am responsible for technical direction and point-cloud extraction in
-      this team project, which turns motorway laser scans into CAD data.\\[.3cm]
-      \textbf{\href{https://iolabs.ch/en/case-studies/automated-plan-stamping/}{Automated plan stamping.}}
-      I built a system that places stamps in technical PDFs. It uses Mask R-CNN
-      with a classical fallback and still runs behind FastAPI.
-      I also quantized and retrained the model, but did not use that version.\\[.3cm]
-      \textbf{\href{https://iolabs.ch/en/case-studies/ai-data-sorting/}{AI document sorting.}}
-      I used GPT-3.5 and GPT-4 to classify technical documents and extract information.
-      \par\vspace{1.7ex}
-      \textbf{2019/02--2019/12: ioLabs s.r.o. (agreement term)}\\
-      \textbf{Programming and scripting (C++, Python, C\#)}
-      \begin{itemize}
-        \item Limited-hours agreement alongside Ph.D. research.
-      \end{itemize}
-    \end{minipage}\\
-  \end{tabular}
+\cvsection{Skills and languages}
+\cvrow{Programming}{Python, C/C++, PyTorch, Open3D, ROOT; limited C\# experience.}
+\cvrow{Infrastructure}{Azure ML, DVC, AWS Textract, Docker, Jenkins, Git, Flask and FastAPI.}
+\cvrow{Languages}{Czech/Slovak (native), English (fluent), Japanese (intermediate;
+self-assessed around JLPT N3, uncertified), French (beginner).}
 
-  \newpage
+\cvsection{References}
+\noindent\hspace*{-\cvhang}\begin{minipage}{\cvfull}
+\cvrefrow{\cvref{Martin Loučka}{(current employer)}{ioLabs AG}{CEO}{ml@iolabs.ch}}
+  {\cvref{Zhangbu Xu}{(Work on STAR ZDC)}{BNL, USA}{STAR Spokesperson}{xzb@bnl.gov}}
+\cvrefrow{\cvref{Jaroslav Bielčík}{(Former supervisor)}{FNSPE -- CTU}{Head of the Experimental Particle Physics Department}{jaroslav.bielcik@fjfi.cvut.cz}}
+  {\cvref{Xin Dong}{(Supervisor at LBNL)}{LBNL, USA}{Senior researcher}{xdong@lbl.gov}}
+\cvrefrow{\cvref{Jana Bielčíková}{(Former employer)}{Nuclear Physics Institute, Czech Academy of Sciences}{Director of the Nuclear Spectroscopy Department}{jana.bielcikova@ujf.cas.cz}}
+  {\cvref{Vojtěch Petráček}{(Former supervisor)}{CTU}{University director}{vojtech.petracek@fjfi.cvut.cz}}
+\end{minipage}\par
 
-  \noindent \begin{tabular}{@{} p{3.8cm} l}
-    \begin{tabular}[t]{@{}l@{}}\Large{Research}\\\Large{Experience}\end{tabular}
-    & \begin{minipage}[t]{12.3cm}
-      \textbf{2013--2021: Ph.D. research in particle physics / data science}\\
-      Brookhaven National Laboratory, USA: STAR research, 2013--2021.\\
-      Lawrence Berkeley National Laboratory, USA: affiliate appointments\\
-      within 2013/11--2019/05.\\
-      Nuclear Physics Institute, Czech Academy of Sciences: 2015--2021.
-      \begin{itemize}
-        \item I led a $\Lambda_c$ analysis at STAR with colleagues, using ROOT and C++.
-        \item I handled STAR ZDC operations, calibration and on-call duties.
-        \item I evaluated the PXL detector simulator and advised students.
-      \end{itemize}
-      \vspace{1.7ex}
-      \textbf{2011--2013: CERN, Switzerland}\\
-      \textbf{Detector-Control Systems Developer (PVSS, C/C++)}
-      \begin{itemize}
-        \item I developed detector-control systems in PVSS and C/C++ and
-          contributed to a detector prototype.
-      \end{itemize}
-    \end{minipage}\\
-  \end{tabular}
-  \par\vspace{.4cm}
-
-%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%%%%%%%%%
-
-  \noindent  \begin{tabular}{@{} p{3.8cm} l}
-    \begin{tabular}[t]{@{}l@{}}\Large{Languages}\\\Large{and Skills} \end{tabular}
-      & 
-    \begin{minipage}[t]{12.3cm}
-    Czech/Slovak (native), English (fluent), French (beginner).
-    Japanese is intermediate, self-assessed around JLPT N3, uncertified.\\[.2cm]
-    Python, C/C++, PyTorch, Open3D, ROOT; limited C\# experience.\\[.2cm]
-    Azure ML, DVC, AWS Textract, Docker, Jenkins, Git, Flask and FastAPI.
-    \par\vspace{.4cm}
-    \end{minipage}\\[.4cm]
-    \begin{tabular}[t]{@{}l@{}}\Large{Publications}\\\Large{and Conferences}\end{tabular}
-      & 
-    \begin{minipage}[t]{12.3cm}
-      Author on more than 95 collaboration papers, including an article in
-      Physical Review Letters.\\
-      Nine conference and workshop presentations, including talks and posters.
-    \end{minipage} \\
-  & \\[.5cm]
-  \end{tabular}
-
-\noindent \begin{tabular}{@{} l l l}
-  \Large{References} & & \\[.3cm]
-  & \small Martin Loučka (current employer) & \small Zhangbu Xu (Work on STAR ZDC) \\
-  & \small ioLabs AG & \small BNL, USA  \\
-  & \small CEO & \small STAR Spokesperson \\
-  &  \footnotesize{\href{mailto:ml@iolabs.ch}{ml@iolabs.ch}} &  \footnotesize{\href{mailto:xzb@bnl.gov}{xzb@bnl.gov}} \\[.2cm]
-  & \small Jaroslav Bielčík (Former supervisor)& \small  Xin Dong (Supervisor at LBNL) \\
-  & \small FNSPE -- CTU & \small LBNL, USA \\
-  & \small Head of the Experimental Particle Physics Department & \small  Senior researcher \\
-  &  \footnotesize{\href{mailto:jaroslav.bielcik@fjfi.cvut.cz}{jaroslav.bielcik@fjfi.cvut.cz}} &  \footnotesize{\href{mailto:xdong@lbl.gov}{xdong@lbl.gov}} \\[.2cm]
-  & \small Jana Bielčíková (Former employer) & \small Vojtěch Petráček (Former supervisor)   \\
-  & \small Nuclear Physics Institute, Czech Academy of Sciences & \small CTU \\
-  & \small Director of the Nuclear Spectroscopy Department & \small University director  \\
-  &  \footnotesize{\href{mailto:jana.bielcikova@ujf.cas.cz}{jana.bielcikova@ujf.cas.cz}}  &  \footnotesize{\href{mailto:vojtech.petracek@fjfi.cvut.cz}{vojtech.petracek@fjfi.cvut.cz}}  \\[.4cm]
-\end{tabular}
-
+\par\addvspace{3pt}\noindent\hspace*{-\cvhang}{\sffamily\bfseries\color{meta}Company references}\par\vspace{6pt}
+% Public company details: https://www.service-lang.de/impressum
+% Rink name and contact: https://rink-vermessung.de/kontakt/
+% HWR identity: https://www.umg.eu/en/g3-321-bauprojekte/projektbeteiligte-fachplanung/
+\noindent\hspace*{-\cvhang}\begin{minipage}{\cvfull}\cvsmall
+\begin{minipage}[t]{.48\linewidth}\raggedright
+  \textbf{\href{https://www.service-lang.de/}{Lang\&Lang GmbH}}\\
+  \href{mailto:office@service-lang.de}{office@service-lang.de}\\
+  \href{https://www.service-lang.de/}{service-lang.de}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\raggedright
+  \textbf{\href{https://rink-vermessung.de/}{Vermessungsbüro Rink GmbH}} {\color{meta}(HWR)}\\
+  \href{mailto:buero@rink-vermessung.de}{buero@rink-vermessung.de}\\
+  \href{https://rink-vermessung.de/}{rink-vermessung.de}
+\end{minipage}
+\end{minipage}
 \end{document}

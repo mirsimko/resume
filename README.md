@@ -1,4 +1,4 @@
-**Miroslav Šimko, PhD**
+**Miroslav Šimko, Ph.D.**
 
 Machine Learning / Python / C++ Developer at [ioLabs](https://iolabs.ch)
 
@@ -6,4 +6,4 @@ Machine Learning / Python / C++ Developer at [ioLabs](https://iolabs.ch)
 
 [Download CV (PDF)](https://github.com/mirsimko/resume/blob/master/CV.pdf)
 
-Build with `latexmk -pdf CV.tex`.
+Build with `latexmk -pdf CV.tex` using TeX Live with the Source Serif Pro and Source Sans Pro fonts.
